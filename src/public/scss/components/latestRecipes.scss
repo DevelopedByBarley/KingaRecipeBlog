@@ -1,8 +1,29 @@
+#latestRecipe-title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 70px;
+  font-family: $titleFont;
+  font-size: 1.3rem;
+  margin-top: 5rem;
+  position: relative;
+}
+
+hr {
+  border: .5px solid hsla(188, 100%, 6%, 0.2);
+  width: 20%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
 #latestContainer {
   width: 100%;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   padding: 2rem;
+  grid-gap: .5rem;
   .latestRecipes {
     border: 1px solid;
     cursor: pointer;
@@ -21,5 +42,9 @@
   #latestContainer {
     grid-template-rows: 1fr;
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  #addRecipe {
+    position: relative;
   }
 }

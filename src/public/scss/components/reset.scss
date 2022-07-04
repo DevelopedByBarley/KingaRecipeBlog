@@ -6,3 +6,9 @@
   scroll-behavior: smooth;
 }
 
+a {
+  padding: 0 3rem;
+  color:  hsla(188, 100%, 6%, 0.58);
+  font-family: $paragraphFont;
+  font-weight: bold;
+}

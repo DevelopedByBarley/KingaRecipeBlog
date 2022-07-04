@@ -8,15 +8,24 @@ const RecipeModel = require('../database/models/recipeModel')
 router.get('/', (req, res) => {
   res.render('index');
 })
+
+router.get('/recipes', async (req,res) => {
+  try {
+    let recipes = await RecipeModel.find({});
+    res.render('recipes/index', {recipes: recipes})
+  } catch (error) {
+    console.log(error)
+    res.render('error/oops', { errorMessage: "Sajnos a receptgyüjtemény még nem elérhető!" })
+  }
+})
+
 router.get('/admin', (req, res) => {
-  res.render('error/oops');
+  res.render('error/oops', {errorMessage: "Sajnos az admin felület még nem elérhető!" });
 })
 router.get('/addRecipe', (req, res) => {
-  res.render('partials/addRecipe')
+  res.render('recipes/new')
 })
-router.get('/allRecipes', (req, res) => {
-  res.render('error/oops', { errorMessage: "Sajnos a receptgyüjtemény még nem elérhető!" })
-})
+
 
 
 
@@ -37,8 +46,8 @@ router.post('/sendRecipe', async (req, res) => {
       steps: req.body.steps,
     })
     await newRecipe.save();
-    console.log(newRecipe);
-    res.render('partials/allRecipes');
+    let recipes = await RecipeModel.find({});
+    res.render('recipes/index', {recipes: recipes});
   } catch (error) {
     console.error(error);
     res.render('error/oops', { errorMessage: "Sajnos még nem tudsz hozzáadni receptet a gyüjteményedhez!"});

@@ -8,7 +8,7 @@
   font-family: $titleFont;
   font-size: 1.3rem;
   padding: 4rem;
-  #allRecipes {
+  a{
     padding: .3rem 3rem;
     color:  hsla(188, 100%, 6%, 0.58);
     font-family: $paragraphFont;
@@ -17,7 +17,7 @@
     margin-top: 3rem;
   }
 
-  #allRecipes:hover {
+  a:hover {
     background: black;
     color: white;
     transition: all .3s ease-in-out;
@@ -28,5 +28,6 @@
     margin: 0 auto;
     margin-top: 1rem;
   }
+  
 
 }
