@@ -3,16 +3,32 @@ nav {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  position: relative;
 
   a {
     padding: 0 3rem;
-    color: hsla(188, 100%, 50%, 1);
+    color:  hsla(188, 100%, 6%, 0.58);
     font-family: $paragraphFont;
     font-weight: bold;
   }
+
+  #addRecipe {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    border: 1px solid;
+    color: black;
+    padding: .5rem;
+    transform: translate(0, -50%);
+  }
+  #addRecipe:hover {
+    background: black;
+    color: white;
+    transition: all .3s ease-in-out;
+  }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   nav {
     display: none;
   }

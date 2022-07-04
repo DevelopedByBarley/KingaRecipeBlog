@@ -1,9 +1,15 @@
 @import './components/reset';
-@import './components/oops';
-@import './components/tipography';
 @import './components/variables';
+@import './components/tipography';
+
+@import './components/oops';
+@import './components/errorMessage';
+
+
 @import './components/socialNav';
 @import './components/header';
 @import './components/navigation';
 @import './components/latestRecipes';
 @import './components/categories';
+@import './components/allRecipes';
+
