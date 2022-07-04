@@ -1,0 +1,18 @@
+header {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  #title {
+    font-family: $titleFont;
+    font-size: 5rem;
+    font-weight: 100;
+  }
+  p {
+    font-size: 1.2rem;
+    margin-left: 3rem;
+    font-family: $paragraphFont;
+  }
+}

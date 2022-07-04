@@ -1,0 +1,19 @@
+nav {
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  a {
+    padding: 0 3rem;
+    color: hsla(188, 100%, 50%, 1);
+    font-family: $paragraphFont;
+    font-weight: bold;
+  }
+}
+
+@media(max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
