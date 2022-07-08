@@ -5,7 +5,8 @@ const bodyParser = require('body-parser')
 
 const connectToDatabase = require('./database/connect/connect')
 
-const recipeRoutes = require('./routes/recipes');
+const indexRouter = require('./routes/index')
+const recipeRouter = require('./routes/recipes');
 
 
 app.set('views', __dirname + '/views')
@@ -16,7 +17,8 @@ app.use(express.static(__dirname + '/public'))
 app.use(expressLayouts)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', recipeRoutes)
+app.use('/', indexRouter)
+app.use('/recipes', recipeRouter)
 
 
 connectToDatabase();

@@ -3,36 +3,38 @@ const router = express.Router();
 
 const RecipeModel = require('../database/models/recipeModel')
 
-//Get methods
 
-router.get('/', (req, res) => {
-  res.render('index');
+router.get('/admin', (req, res) => {
+  res.render('error/oops', { errorMessage: "Sajnos az admin felület még nem elérhető!" });
 })
 
-router.get('/recipes', async (req,res) => {
+
+//RECIPES REQUESTS
+
+router.get('/', async (req, res) => {
   try {
     let recipes = await RecipeModel.find({});
-    res.render('recipes/index', {recipes: recipes})
+    res.render('recipes/index', { recipes: recipes })
   } catch (error) {
     console.log(error)
     res.render('error/oops', { errorMessage: "Sajnos a receptgyüjtemény még nem elérhető!" })
   }
 })
 
-router.get('/admin', (req, res) => {
-  res.render('error/oops', {errorMessage: "Sajnos az admin felület még nem elérhető!" });
-})
-router.get('/addRecipe', (req, res) => {
+router.get('/new', (req, res) => {
   res.render('recipes/new')
 })
 
+router.get('/recipe/:id', async (req, res) => {
+  let id = req.params.id;
+  let recipe = await RecipeModel.findOne({
+    _id: id
+  })
 
+  res.render('recipes/recipe', { recipe: recipe })
+})
 
-
-//Post methods
-
-
-router.post('/sendRecipe', async (req, res) => {
+router.post('/new', async (req, res) => {
   try {
     const newRecipe = await new RecipeModel({
       title: req.body.title,
@@ -46,15 +48,26 @@ router.post('/sendRecipe', async (req, res) => {
       steps: req.body.steps,
     })
     await newRecipe.save();
-    let recipes = await RecipeModel.find({});
-    res.render('recipes/index', {recipes: recipes});
+    res.redirect('/recipes')
   } catch (error) {
     console.error(error);
-    res.render('error/oops', { errorMessage: "Sajnos még nem tudsz hozzáadni receptet a gyüjteményedhez!"});
+    res.render('error/oops', { errorMessage: "Valami lemaradt! Tölts ki minden mezőt!" });
   }
 })
 
 
+
+router.delete('/recipe/:id', async (req, res) => {
+  try {
+    let id = req.params.id;
+    await RecipeModel.deleteOne({
+      _id: id
+    })
+    res.redirect('/')
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 
 module.exports = router;

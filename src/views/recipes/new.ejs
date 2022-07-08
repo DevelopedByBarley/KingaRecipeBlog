@@ -1,5 +1,27 @@
-<form action="/sendRecipe" method="POST">
-  <input type="text">
-  <input type="text">
+<form action="/recipes/new" method="POST" id="sendRecipesForm">
+  <input type="text" name="title" id="title">
+  <input type="number" name="portion" id="portion" max="6">
+  <input type="number" name="cost" id="cost">
+  
+
+  <label for="cars">Nehézség:</label>
+  <select name="difficult" id="difficult">
+    <option value="Könnyü">Könnyü</option>
+    <option value="Közepes">Közepes</option>
+    <option value="Nehéz">Nehéz</option>
+    <option value="Nagyon nehéz">Nagyon nehéz</option>
+  </select>
+
+  <input type="number" name="preparationTime" id="preparationTime">
+  <input type="number" name="duration" id="duration">
+  
+  <input type="text" name="ingredient" id="ingredient">
+
+  <input type="text" name="steps" id="steps">
+
+  <textarea name="comment" id="comment" cols="30" rows="10">
+
+  </textarea>
+
   <button type="submit">Hozzáad</button>
 </form>

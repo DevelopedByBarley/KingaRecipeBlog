@@ -4,14 +4,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 70px;
   font-family: $titleFont;
   font-size: 1.3rem;
   padding: 4rem;
   a{
     padding: .3rem 3rem;
     color:  hsla(188, 100%, 6%, 0.58);
-    font-family: $paragraphFont;
+    font-family: $textFont;
     font-weight: bold;
     border: 1px solid;
     margin-top: 3rem;
