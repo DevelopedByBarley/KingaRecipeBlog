@@ -327,16 +327,15 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5rem;
+  padding: 3rem;
   flex-direction: column;
   font-family: "Caveat", cursive;
   font-size: 1.4rem;
 }
 #sendRecipesForm .form-group {
   display: flex;
-  width: 50%;
-  margin: 0 auto;
   flex-direction: column;
+  width: 100%;
 }
 #sendRecipesForm .form-group input,
 #sendRecipesForm .form-group select {
@@ -373,6 +372,12 @@ hr {
   font-size: 1.2rem;
 }
 
+@media (min-width: 768px) {
+  #sendRecipesForm .form-group {
+    width: 40%;
+    margin: 0 auto;
+  }
+}
 #recipes-container {
   width: 100%;
   padding: 2rem;

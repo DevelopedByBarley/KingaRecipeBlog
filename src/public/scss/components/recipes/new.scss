@@ -2,16 +2,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5rem;
+    padding: 3rem;
     flex-direction: column;
     font-family: $titleFont;
     font-size: 1.4rem;
 
     .form-group {
         display: flex;
-        width: 50%;
-        margin: 0 auto;
         flex-direction: column;
+        width: 100%;
 
         input,
         select {
@@ -55,3 +54,13 @@
     }
 }
 
+@media (min-width: 768px) {
+    #sendRecipesForm {
+        .form-group {
+            width: 40%;
+            margin: 0 auto;
+        }
+
+    }
+
+}
