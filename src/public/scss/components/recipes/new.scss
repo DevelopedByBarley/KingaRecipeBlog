@@ -1,11 +1,57 @@
 #sendRecipesForm {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: lightblue;
-  height: 50vh;
-  padding: 5rem;
-  width: 80%;
-  margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    flex-direction: column;
+    font-family: $titleFont;
+    font-size: 1.4rem;
+
+    .form-group {
+        display: flex;
+        width: 50%;
+        margin: 0 auto;
+        flex-direction: column;
+
+        input,
+        select {
+            width: 100%;
+            margin: .2rem auto 1rem auto;
+            padding: .2rem;
+        }
+
+        button {
+            width: 30%;
+            min-width: 170px;
+            position: relative;
+            top: -.3rem;
+            margin: 0 auto;
+            padding: .3rem;
+            color: white;
+            background-color: $nightBackground;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: $nightBackground;
+            transition: all .4s ease-in-out;
+        }
+
+        #comment {
+            padding: 1rem;
+        }
+    }
+
+    #send-recipe {
+        margin-top: 2rem;
+        padding: .5rem 1rem;
+        background-color: $nightBackground;
+        font-family: $textFont;
+        color: white;
+        font-weight: bolder;
+        font-size: 1.2rem;
+        ;
+    }
 }
+

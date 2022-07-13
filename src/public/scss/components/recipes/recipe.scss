@@ -1,0 +1,84 @@
+#recipe-container {
+    text-align: center;
+    padding: 2rem;
+
+    h1 {
+        font-family: $titleFont;
+        margin: 1rem;
+    }
+
+    p {
+        font-family: $textFont;
+        font-weight: bolder;
+    }
+
+    #recipe-title {
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 3.5rem;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    #ingredients p,
+    #steps p {
+        border-bottom: 1px solid;
+        width: 87%;
+        margin: 0 auto;
+    }
+
+
+}
+
+@media(min-width: 768px) {
+    #recipe-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100px 1fr;
+        ;
+
+        #recipe-title {
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 2;
+            text-align: center;
+            margin: 5rem;
+        }
+
+        img {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .recipe-description {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            #ingredients {
+                position: fixed;
+                bottom: 0px;
+                right: 20px;
+                font-style: italic;
+                color: white;
+                background-color: hsla(169, 100%, 12%, 0.59);
+                padding: 1rem;
+                border-radius: 20px;
+                font-family: $textFont;
+                font-weight: bolder;
+
+                input[type=checkbox]:checked + label {
+                    text-decoration: line-through;
+                }
+            }
+
+            .comment, #steps {
+                grid-column: 1 / span 3;
+            }
+        }
+    }
+}

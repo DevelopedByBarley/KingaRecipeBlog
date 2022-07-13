@@ -4,29 +4,40 @@
         <h1>Legutóbbi receptek</h1>
         <hr>
       </div>
+
       <div id="latestContainer">
-        <div class="latestRecipes">
-          <img src="/images/2.jpg" alt="">
-        </div>
-        <div class="latestRecipes">
-          <img src="/images/3.jpg" alt="">
-        </div>
-        <div class="latestRecipes">
-          <img src="/images/4.jpg" alt="">
-        </div>
-        <div class="latestRecipes">
-          <img src="/images/5.jpg" alt="">
-        </div>
-        <div class="latestRecipes">
-          <img src="/images/6.jpg" alt="">
-        </div>
+        <% for(let recipe of latestRecipes) {%>
+            <div class="latestRecipes">
+              <img src="images/2.jpg" alt="">
+              <h2><%= recipe.title %> </h2>
+
+              <div class="latestRecipes-description">
+                <p>
+                  <span><i class="fa-regular fa fa-clock"></i></span>
+                  <%=recipe.fullTime %>
+                </p>
+                <p>
+                  <i class="fa-solid fa-dumbbell"></i>
+                  <%=recipe.difficult %>
+                </p>
+                <p>
+                  <i class="fa-solid fa-people-group"></i>
+                  <%=recipe.portion %>
+                </p>
+                <p>
+                  <i class="fa-solid fa-dollar-sign"></i>
+                  <%=recipe.cost %>
+                </p>
+              </div>
+            </div>
+        <% } %> 
       </div>
 
       <div id="allRecipes-title">
         <h1>Összes Recept</h1>
         <hr>
         <a href="/recipes" id="allRecipes">Tovább </a>
-        <a href="/addRecipe" id="addRecipe">Adj hozzá</a>
+        <a href="/recipes/new" id="addRecipe">Adj hozzá</a>
       </div>
 
       <div id="categorie-title">
@@ -44,7 +55,7 @@
         </div>
         <div class="categorie">
           <div class="categorie-wrapper">
-            <img src="/images/3.jpg" class="categorie-image">
+            <img src="/images/2.jpg" class="categorie-image">
             <p class="categorie-title">
               Ázsiai
             </p>
@@ -52,7 +63,7 @@
         </div>
         <div class="categorie">
           <div class="categorie-wrapper">
-            <img src="/images/4.jpg" class="categorie-image">
+            <img src="/images/2.jpg" class="categorie-image">
             <p class="categorie-title">
               Amerikai
             </p>
@@ -60,7 +71,7 @@
         </div>
         <div class="categorie">
           <div class="categorie-wrapper">
-            <img src="/images/5.jpg" class="categorie-image">
+            <img src="/images/2.jpg" class="categorie-image">
             <p class="categorie-title">
               Magyar
             </p>
@@ -68,7 +79,7 @@
         </div>
         <div class="categorie">
           <div class="categorie-wrapper">
-            <img src="/images/3.jpg" class="categorie-image">
+            <img src="/images/2.jpg" class="categorie-image">
             <p class="categorie-title">
               Olasz
             </p>

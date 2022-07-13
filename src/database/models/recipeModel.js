@@ -21,11 +21,15 @@ const recipeSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  duration: {
+  cookDuration: {
     type: Number,
     required: true
   },
-  ingredient: {
+  fullTime: {
+    type: Number,
+    required: true
+  },
+  ingredients: {
     type: [String],
     required: true
   },

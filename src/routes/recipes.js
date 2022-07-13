@@ -42,11 +42,15 @@ router.post('/new', async (req, res) => {
       cost: req.body.cost,
       difficult: req.body.difficult,
       preparationTime: req.body.preparationTime,
-      duration: req.body.duration,
-      ingredient: req.body.ingredient,
+      cookDuration: req.body.cookDuration,
+      fullTime: Number(req.body.preparationTime) + Number(req.body.cookDuration),
+      ingredients: req.body.ingredients,
       comment: req.body.comment,
       steps: req.body.steps,
     })
+
+    console.log(newRecipe);
+
     await newRecipe.save();
     res.redirect('/recipes')
   } catch (error) {

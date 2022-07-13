@@ -1,2 +1,62 @@
-<h1>title: <%= recipe.title  %> </h1>
-<p>comment: <%= recipe.comment %> </p>
+<div id="recipe-container">
+    <h1 id="recipe-title">
+        <%= recipe.title %>
+    </h1>
+    <img src="/images/2.jpg" alt="">
+    <div class="recipe-description">
+        <div id="portion">
+            <h1>Adag/Fő</h1>
+            <p>
+                <%= recipe.portion %>
+            </p>
+        </div>
+        <div id="cost">
+            <h1>Költség</h1>
+            <p><%= recipe.cost %></p>
+        </div>
+        <div id="difficult">
+            <h1>Nehézség</h1>
+            <p><%= recipe.difficult%></p>
+        </div>
+        <div id="preparation-time">
+            <h1>Előkészülési idő:</h1>
+            <p><%= recipe.preparationTime %> perc</p>
+        </div>
+        <div id="cookDuration">
+            <h1>Főzési idő:</h1>
+            <p><%= recipe.cookDuration %> perc</p>
+        </div>
+    
+        <div id="ingredients">
+            <h1>Hozzávalók</h1>
+            <% for(let ingredient of recipe.ingredients) {%>
+                <% if(ingredient !=='' ) {%>
+                    <div class="ingredient-box">
+                        <input type="checkbox" name="ingredient" id="">
+                        <label for="ingredeint"><%= ingredient %></label>
+                    </div>
+                    
+                    
+                    <% } %>
+                <%}%>
+        </div>
+        
+        <div id="steps">
+            <h1>Lépések</h1>
+            <% for(let step of recipe.steps) {%>
+                <% if(step !=='' ) {%>
+                    <p>
+                        <%= step %>
+                    </p>
+                <% } %>
+            <%}%>
+        </div>
+    
+        <div class="comment">
+            <h1>Komment:</h1>
+            <p>
+                <%= recipe.comment %>
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 
-#recipe-container {
+#recipes-container {
   width: 100%;
   padding: 2rem;
   display: grid;
@@ -59,7 +59,7 @@
 }
 
 @media (min-width: 768px) {
-  #recipe-container {
+  #recipes-container {
     grid-template-columns: repeat(2, 1fr);
     margin-top: 5rem;
 
@@ -85,7 +85,7 @@
 }
 
 @media (min-width: 1300px) {
-  #recipe-container {
+  #recipes-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }

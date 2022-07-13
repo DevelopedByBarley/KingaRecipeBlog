@@ -1,4 +1,4 @@
-<div id="recipe-container">
+<div id="recipes-container">
   <% recipes.forEach(function(recipe) { %>
     <div class="recipe-box">
       <div class="recipe-image-container">
@@ -12,7 +12,7 @@
         <div class="recipe-description">
           <p>
             <span><i class="fa-regular fa fa-clock"></i></span>
-            <%=recipe.duration %>
+            <%=recipe.fullTime %>
           </p>
           <p>
             <i class="fa-solid fa-dumbbell"></i>
