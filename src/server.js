@@ -1,3 +1,6 @@
+require('dotenv').config()
+let port = process.env.PORT
+
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts')
@@ -24,4 +27,4 @@ app.use('/recipes', recipeRouter)
 connectToDatabase();
 
 
-app.listen(8080)
+app.listen(port, () => { console.log(`App is listening on ${port}`)})
