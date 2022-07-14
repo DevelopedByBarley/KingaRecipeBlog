@@ -19,17 +19,31 @@
             padding: .2rem;
         }
 
-        button {
-            width: 30%;
-            min-width: 170px;
-            position: relative;
-            top: -.3rem;
-            margin: 0 auto;
-            padding: .3rem;
-            color: white;
-            background-color: $nightBackground;
-            cursor: pointer;
+        .button-container {
+            button {
+                width: 30%;
+                min-width: 170px;
+                position: relative;
+                top: -.3rem;
+                margin: 0 auto;
+                padding: .3rem;
+                color: white;
+                cursor: pointer;
+                font-family: $textFont;
+                font-weight: bolder;
+                font-size: .9rem;
+            }
+
+            .add-button {
+                background-color: $nightBackground;
+            }
+
+            .remove-button {
+                background-color: hsla(2, 70%, 57%, 1);
+            }
+
         }
+
 
         button:hover {
             background-color: white;

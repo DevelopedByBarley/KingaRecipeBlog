@@ -343,7 +343,7 @@ hr {
   margin: 0.2rem auto 1rem auto;
   padding: 0.2rem;
 }
-#sendRecipesForm .form-group button {
+#sendRecipesForm .form-group .button-container button {
   width: 30%;
   min-width: 170px;
   position: relative;
@@ -351,8 +351,16 @@ hr {
   margin: 0 auto;
   padding: 0.3rem;
   color: white;
-  background-color: hsl(188deg, 100%, 6%);
   cursor: pointer;
+  font-family: "Arima", cursive;
+  font-weight: bolder;
+  font-size: 0.9rem;
+}
+#sendRecipesForm .form-group .button-container .add-button {
+  background-color: hsl(188deg, 100%, 6%);
+}
+#sendRecipesForm .form-group .button-container .remove-button {
+  background-color: hsl(2deg, 70%, 57%);
 }
 #sendRecipesForm .form-group button:hover {
   background-color: white;
