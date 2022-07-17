@@ -1,4 +1,4 @@
-#sendRecipesForm {
+.sendRecipesForm {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +69,7 @@
 }
 
 @media (min-width: 768px) {
-    #sendRecipesForm {
+    .sendRecipesForm {
         .form-group {
             width: 40%;
             margin: 0 auto;

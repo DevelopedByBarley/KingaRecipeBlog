@@ -1,18 +1,21 @@
 
+</div>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    
   </head>
   <body>
-    <form action="/recipes/new" method="POST" class="sendRecipesForm">
-    
+    <form class="sendRecipesForm" >
+      <img src="/images/2.jpg" style="width: 200px"/>
       <div class="form-group">
         <label for="title" class="label-title">
           <span class="content-title">Recept neve:</span>
         </label>
-        <input type="text" name="title" id="title" autocomplete="off" placeholder="Rántott padlizsán" required>
+        <input type="text" name="title" id="recipe-title" autocomplete="off" placeholder="<%= recipe.title %> " required>
       </div>
     
       <div class="form-group">
@@ -55,7 +58,7 @@
       <div class="form-group">
         <label for="steps">Hozzávalók</label> 
         <div id="ingredients-container">
-          <input type="text" name="ingredients" id="ingredients"  required>
+          <input type="text" name="ingredients" id="ingredient"  required>
         </div>
         <div class="button-container">
           <button id="addIngredients" class="add-button">Hozzáad</button>
@@ -66,7 +69,7 @@
       <div class="form-group">
         <label for="steps">Lépések</label>
         <div id="steps-container">
-          <input type="text" name="steps" id="steps"  required>
+          <input type="text" name="steps" class="steps" id="step"  required>
         </div>
         <div class="button-container">
           <button id="addSteps" class="add-button">Hozzáad</button>
@@ -79,9 +82,8 @@
         <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Adj hozzá kommentet..."></textarea>
       </div>
     
-      <button type="submit" id="send-recipe">Elküld</button>
-    </form>
-
-    <script src="/js/recipes/new.js"></script>
+      <button id="update-recipe" data-id="<%= recipe._id %> ">Frissit</button>
+    
+    <script src="/js/recipes/update.js"></script>
   </body>
 </html>

@@ -34,6 +34,15 @@ router.get('/recipe/:id', async (req, res) => {
   res.render('recipes/recipe', { recipe: recipe })
 })
 
+router.get('/recipe/update/:id', async (req,res) => {
+  let id = req.params.id;
+  let recipe = await RecipeModel.findOne({
+    _id: id
+  });
+
+  res.render('recipes/update', {recipe: recipe})
+})
+
 router.post('/new', async (req, res) => {
   try {
     const newRecipe = await new RecipeModel({
@@ -71,6 +80,35 @@ router.delete('/recipe/:id', async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+})
+
+router.put('/recipe/update/:id', async (req, res) => {
+  let id = req.params.id;
+  const newRecipe = {
+    title: req.body.title,
+    portion: req.body.portion,
+    cost: req.body.cost,
+    difficult: req.body.difficult,
+    preparationTime: req.body.preparationTime,
+    cookDuration: req.body.cookDuration,
+    fullTime: req.body.preparationTime + req.body.cookDuration,
+    ingredients: req.body.ingredients,
+    comment: req.body.comment,
+    steps: req.body.steps,
+  }
+
+  console.log(newRecipe)
+
+  try {
+    let updatedRecipe = await RecipeModel.findByIdAndUpdate({_id: id}, newRecipe)
+    console.log(updatedRecipe)
+    res.redirect('/recipes')
+  } catch (error) {
+    console.log(error)
+    res.render('error/oops', { errorMessage: "Valami lemaradt! Tölts ki minden mezőt!" });
+  }
+
+
 })
 
 

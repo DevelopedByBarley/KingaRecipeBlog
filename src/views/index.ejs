@@ -45,45 +45,19 @@
         <hr>
       </div>
       <div id="categories">
-        <div class="categorie">
-          <div class="categorie-wrapper">
-            <img src="/images/2.jpg" class="categorie-image">
-            <p class="categorie-title">
-              Thai
-            </p>
-          </div>
-        </div>
-        <div class="categorie">
-          <div class="categorie-wrapper">
-            <img src="/images/2.jpg" class="categorie-image">
-            <p class="categorie-title">
-              Ázsiai
-            </p>
-          </div>
-        </div>
-        <div class="categorie">
-          <div class="categorie-wrapper">
-            <img src="/images/2.jpg" class="categorie-image">
-            <p class="categorie-title">
-              Amerikai
-            </p>
-          </div>
-        </div>
-        <div class="categorie">
-          <div class="categorie-wrapper">
-            <img src="/images/2.jpg" class="categorie-image">
-            <p class="categorie-title">
-              Magyar
-            </p>
-          </div>
-        </div>
-        <div class="categorie">
-          <div class="categorie-wrapper">
-            <img src="/images/2.jpg" class="categorie-image">
-            <p class="categorie-title">
-              Olasz
-            </p>
-          </div>
-        </div>
+        <% for(let categorie of latestCategories) { %> 
+            <div class="categorie">
+              <div class="categorie-wrapper">
+                <img src="/images/2.jpg" class="categorie-image">
+                <p class="categorie-title">
+                  <%= categorie.title %>
+                </p>
+                
+              </div>
+            </div>
+        <% } %> 
+
+        <a href="#">Hozzáad</a>
+        <a href="#">Összes kategória</a>
       </div>
       
