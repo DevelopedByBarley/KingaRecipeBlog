@@ -317,6 +317,45 @@ hr {
   .sendRecipesForm .form-group {
     width: 40%;
     margin: 0 auto; } }
+.sendRecipesForm #ingredients-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .sendRecipesForm #ingredients-wrapper #ingredients-box {
+    display: flex; }
+    .sendRecipesForm #ingredients-wrapper #ingredients-box .removeIngredients {
+      border: 0;
+      background: white;
+      cursor: pointer; }
+.sendRecipesForm #steps-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .sendRecipesForm #steps-wrapper #steps-box {
+    display: flex; }
+    .sendRecipesForm #steps-wrapper #steps-box .removeSteps {
+      border: 0;
+      background: white;
+      cursor: pointer; }
+.sendRecipesForm button {
+  position: relative;
+  top: -0.3rem;
+  margin: 1rem auto;
+  padding: 0.3rem;
+  cursor: pointer;
+  font-family: "Arima", cursive;
+  font-weight: bolder;
+  font-size: 0.9rem; }
+.sendRecipesForm .add-button {
+  min-width: 170px;
+  width: 30%;
+  background-color: #001b1f;
+  color: white; }
+
 #recipes-container {
   width: 100%;
   padding: 2rem;

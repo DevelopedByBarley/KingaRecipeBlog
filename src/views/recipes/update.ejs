@@ -15,13 +15,13 @@
         <label for="title" class="label-title">
           <span class="content-title">Recept neve:</span>
         </label>
-        <input type="text" name="title" id="recipe-title" autocomplete="off" placeholder="<%= recipe.title %> " required>
+        <input type="text" name="title" id="recipe-title" autocomplete="off" value="<%= recipe.title %> " required>
       </div>
     
       <div class="form-group">
         <label for="portion" class="label-portion">
           <span class="content-portion">Adag/fő:</span>
-        </label>
+        </label>value
         <input type="number" name="portion" id="portion" autocomplete="off" max="6" placeholder="max: 6" required>
       </div>
     
@@ -55,27 +55,57 @@
         <input type="number" name="cookDuration" id="cookDuration" placeholder="perc" required>
       </div>
     
-      <div class="form-group">
-        <label for="steps">Hozzávalók</label> 
-        <div id="ingredients-container">
-          <input type="text" name="ingredients" id="ingredient"  required>
+      <div id="ingredients-wrapper">
+        <label for="ingredients">Hozzávalók</label> 
+        <div class="form-group" id="ingredients-container">
+          <% for(var ingredient of recipe.ingredients) { %>
+            <div id="ingredients-box">
+              <input type="text" name="ingredients" id="ingredient" value="<%= ingredient %> " required>
+              <button class="removeIngredients remove-button" ><i class="fa-solid fa-lg fa-trash"></i></button>
+            </div>
+          <% } %> 
         </div>
         <div class="button-container">
           <button id="addIngredients" class="add-button">Hozzáad</button>
-          <button id="removeIngredients" class="remove-button">Töröl</button>
         </div>
       </div>
     
-      <div class="form-group">
-        <label for="steps">Lépések</label>
-        <div id="steps-container">
-          <input type="text" name="steps" class="steps" id="step"  required>
+      <div id="steps-wrapper">
+        <label for="steps">Lépések:</label> 
+        <div class="form-group" id="steps-container">
+          <% for(var step of recipe.steps) { %>
+            <div id="steps-box">
+              <input type="text" name="steps" id="steps" value="<%= step %> "required>
+              <button class="removeSteps remove-button"><i class="fa-solid fa-lg fa-trash"></i></button>
+            </div>
+          <% } %> 
         </div>
         <div class="button-container">
           <button id="addSteps" class="add-button">Hozzáad</button>
-          <button id="removeSteps" class="remove-button">Töröl</button>
         </div>
       </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
       <div class="form-group">
         <label for="comment">Komment:</label>

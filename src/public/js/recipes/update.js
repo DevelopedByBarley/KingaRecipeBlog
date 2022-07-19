@@ -1,3 +1,5 @@
+
+
 let title = document.getElementById('recipe-title');
 let portion = document.getElementById('portion');
 let cost = document.getElementById('cost');
@@ -5,48 +7,74 @@ let difficult = document.getElementById('difficult');
 let preparationTime = document.getElementById('preparationTime');
 let cookDuration = document.getElementById('cookDuration');
 let comment = document.getElementById('comment');
-
-
-let ingredientsContainer = document.getElementById('ingredients-container')
-let addIngredients = document.getElementById('addIngredients');
-let removeIngredients = document.getElementById('removeIngredients');
-let ingredient = document.getElementById('ingredient')
-
-
-let stepsContainer = document.getElementById('steps-container');
-let steps = document.getElementById('step');
-let addSteps = document.getElementById('addSteps');
-let removeSteps = document.getElementById('removeSteps');
-
 let updateRecipe = document.getElementById('update-recipe');
 
 
 
+
+let ingredientsContainer = document.getElementById('ingredients-container')
+let ingredientsBox = document.querySelector('#ingredients-box')
+let addIngredients = document.getElementById('addIngredients');
+
+let stepsContainer = document.getElementById('steps-container');
+let stepsBox = document.getElementById('steps-box');
+let addSteps = document.getElementById('addSteps');
+
+
+
+
+function renderIngredients() {
+  let removeIngredients = document.querySelectorAll('.removeIngredients');
+  for (let removeBtn of removeIngredients) {
+    removeBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.currentTarget.parentElement.remove();
+    })
+  }
+}
+
+
 addIngredients.addEventListener('click', (event) => {
+  console.log(event.target)
   event.preventDefault();
-  let clone = ingredient.cloneNode(true);
-  clone.value = '';
+  let clone = ingredientsBox.cloneNode(true);
+  clone.childNodes[1].value= ""
   ingredientsContainer.appendChild(clone);
+  renderIngredients();
 })
 
-removeIngredients.addEventListener('click', (event) => {
-  event.preventDefault();
-  ingredientsContainer.removeChild(ingredientsContainer.lastChild)
-})
 
+
+
+
+function renderSteps() {
+  let removeSteps = document.querySelectorAll('.removeSteps');
+  for (let removeBtn of removeSteps) {
+    removeBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.currentTarget.parentElement.remove();
+    })
+  }
+}
 
 
 addSteps.addEventListener('click', (event) => {
+  console.log(event.target)
   event.preventDefault();
-  let clone = steps.cloneNode(true);
-  clone.value = '';
+  let clone = stepsBox.cloneNode(true);
+  clone.childNodes[1].value= ""
   stepsContainer.appendChild(clone);
+  
+  renderSteps();
 })
 
-removeSteps.addEventListener('click', (event) => {
-  event.preventDefault();
-  stepsContainer.removeChild(stepsContainer.lastChild);
-})
+
+
+
+window.onload = renderIngredients()
+window.onload = renderSteps()
+
+
 
 let ingredientsArray = [];
 let stepsArray = [];
