@@ -323,9 +323,9 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
-  .sendRecipesForm #ingredients-wrapper #ingredients-box {
+  .sendRecipesForm #ingredients-wrapper .ingredients-box {
     display: flex; }
-    .sendRecipesForm #ingredients-wrapper #ingredients-box .removeIngredients {
+    .sendRecipesForm #ingredients-wrapper .ingredients-box .removeIngredients {
       border: 0;
       background: white;
       cursor: pointer; }
@@ -335,9 +335,9 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
-  .sendRecipesForm #steps-wrapper #steps-box {
+  .sendRecipesForm #steps-wrapper .steps-box {
     display: flex; }
-    .sendRecipesForm #steps-wrapper #steps-box .removeSteps {
+    .sendRecipesForm #steps-wrapper .steps-box .removeSteps {
       border: 0;
       background: white;
       cursor: pointer; }

@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    #ingredients-box {
+    .ingredients-box {
       display: flex;
       .removeIngredients {
         border: 0;
@@ -21,7 +21,7 @@
     align-items: center;
     justify-content: center;
 
-    #steps-box {
+    .steps-box {
       display: flex;
 
       .removeSteps {

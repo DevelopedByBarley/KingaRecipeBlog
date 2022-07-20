@@ -13,11 +13,11 @@ let updateRecipe = document.getElementById('update-recipe');
 
 
 let ingredientsContainer = document.getElementById('ingredients-container')
-let ingredientsBox = document.querySelector('#ingredients-box')
+let ingredientsBox = document.querySelector('.ingredients-box')
 let addIngredients = document.getElementById('addIngredients');
 
 let stepsContainer = document.getElementById('steps-container');
-let stepsBox = document.getElementById('steps-box');
+let stepsBox = document.querySelector('.steps-box');
 let addSteps = document.getElementById('addSteps');
 
 
@@ -108,9 +108,7 @@ updateRecipe.addEventListener('click', async (event) => {
     ingredients: ingredientsArray,
     steps: stepsArray,
   }
-
-
-
+  
   try {
     await fetch(`/recipes/recipe/update/${id}`, {
       method: 'PUT',

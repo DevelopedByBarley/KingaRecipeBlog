@@ -6,7 +6,7 @@ const recipeSchema = new mongoose.Schema({
     required: true
   },
   portion: {
-    type: String,
+    type: Number,
     required: true
   },
   cost: {
